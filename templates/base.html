@@ -1,0 +1,26 @@
+{% extends "bootstrap/base.html" %}
+
+{%- block head %}
+{{ super() }}
+{%- block title %} Game Rooms {% endblock %}
+<link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block body %}
+{% block navbar %}
+    <nav class="navbar navbar-expand-lg fixed-top ">
+        <a class="navbar-brand" href="/">На главную</a>
+    </nav>
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+{% endblock %}
+
+{% endblock %}
+
+
+

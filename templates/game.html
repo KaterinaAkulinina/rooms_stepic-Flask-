@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block content %}
+<div class="container cont">
+
+    {% if way == [] %}
+        <div class="alert alert-warning" role="alert">
+            <p>Вы не можете сюда идти</p>
+        </div>
+    {% endif %}
+
+    {% for room in way %}
+        {% if room == 'wall' %}
+            <div class="alert alert-warning" role="alert">
+                <p>Вы не можете сюда идти</p>
+            </div>
+        {% elif room == 'Балкон' %}
+            <div class="alert alert-success" role="alert">
+                <p>Вы находитесь в комнате "БАЛКОН"</p>
+
+            </div>
+        {% else %}
+            <div class="alert alert-secondary" role="alert">
+                <p>Вы находитесь в комнате "{{ room }}"</p>
+            </div>
+        {% endif %}
+
+    {% endfor %}
+    {% if 'Балкон' not in way %}
+        {{ wtf.quick_form(form) }}
+    {% else %}
+    <div class="description">
+    <form action="/game/">
+       <button class="btn btn-outline-secondary ">Начать с начала</button>
+       </form>
+    </div>
+    {% endif %}
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block body %}
+{{ super() }}
+    <header class="header">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="description text-center">
+               <h3><font>
+                   Готовы отправиться в путешествие?
+                   <p></p>
+                   <form action="/game/">
+                   <button class="btn btn-outline-secondary"><b>Начать</b></button>
+                   </form>
+               </font></h3>
+            </div>
+        </div>
+    </header>
+
+{% block scripts %}
+    {{ super() }}
+    <script type="text/javascript" src='static/js/main.js'></script>
+{% endblock %}
+{% endblock %}
